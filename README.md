@@ -47,7 +47,7 @@ ajudar os falantes da língua em se desenvolverem como programador. O tutorial e
 ###### Parâmetros
 
 **Nome** | **Opcional** | **Tipo** | **Descrição**
-:-----:|:-----:|:-----
+:-----:|:-----:|:-----:|:-----
 url_file|obrigatório|String|A *URL* completo do arquivo na internet
 file|obrigatório|String|O nome que se deseja usar para salvar o arquivo no computador
 path|opcional|String|O caminho no computador onde deseja salvar o arquivo. Caso não seja informado será salvo na mesma pasta onde o arquivo *Excel* está salvo.
