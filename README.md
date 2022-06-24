@@ -2,7 +2,7 @@
 
 ## Descrição
 
-    __VBF__ é um grupo de funções criado para auxiliar no desenvolvimento de ferramentas em *VBA*. Embora a necessidade de contar com tais recursos tenha surgido na época em que atuei
+    **VBF** é um grupo de funções criado para auxiliar no desenvolvimento de ferramentas em *VBA*. Embora a necessidade de contar com tais recursos tenha surgido na época em que atuei
 no mercado financeiro a ideia de organizá-los em funções veio posteriormente e com a quarentena iniciada em 2020 foi possível começar seu desenvolvimento. Atuantes na área financeira  possuem o maior potencial de usufruir a totalidade dos benefícios deste recurso, contudo qualquer usuário do pacote *MS Office* terá ganho ao usar o __VBF__ em:
 
 * Acessar banco de dados;
@@ -43,6 +43,13 @@ ajudar os falantes da língua em se desenvolverem como programador. O tutorial e
 ###### Descrição:
 
     Baixa arquivos disponíveis em sites.
+
+###### Sintaxe
+
+~~~vbnet
+vbf.api_download_web_file(*url_file, file, path*)
+~~~
+
 
 ###### Parâmetros
 
@@ -86,6 +93,12 @@ dwld = vbf.api_download_web_file(site_ind, arq, pt_temp)
 ###### Descrição:
 
     Retorna o usuário atual.
+
+###### Sintaxe
+
+~~~vbnet
+vbf.api_user_windows()
+~~~
 
 ###### Parâmetros
 
