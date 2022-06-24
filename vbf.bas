@@ -354,7 +354,7 @@ fun_concat_split_off = concatenate
 End Function
 
 '---------------------------------------------------------------------------------------------------
-'-------functions: to work with datagroup ----------------------------------------------------------
+'-------functions: to work with datagroup-----------------------------------------------------------
 '---------------------------------------------------------------------------------------------------
 
 Function dtg_sheet_to_array(ByVal sheet As String, Optional ByVal row_ref As Long, Optional _
@@ -955,7 +955,7 @@ End If
 
 End Function
 '---------------------------------------------------------------------------------------------------
-'-------functions: Excel file and objects settings--------------------------------------------------
+'-------functions: excel file and objects settings--------------------------------------------------
 '---------------------------------------------------------------------------------------------------
 
 Function xls_delete_sheets(ByVal included As String, Optional ByVal file As String) As Variant
