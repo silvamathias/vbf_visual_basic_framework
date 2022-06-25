@@ -2,8 +2,11 @@
 
 ## Descrição
 
-    **VBF** é um grupo de funções criado para auxiliar no desenvolvimento de ferramentas em *VBA*. Embora a necessidade de contar com tais recursos tenha surgido na época em que atuei
-no mercado financeiro a ideia de organizá-los em funções veio posteriormente e com a quarentena iniciada em 2020 foi possível começar seu desenvolvimento. Atuantes na área financeira  possuem o maior potencial de usufruir a totalidade dos benefícios deste recurso, contudo qualquer usuário do pacote *MS Office* terá ganho ao usar o __VBF__ em:
+O _Framework_ **VBF** é um grupo de funções criado para auxiliar no desenvolvimento de ferramentas em *VBA*.
+Embora a necessidadede contar com tais recursos tenha surgido na época em que atuei no mercado financeiro a ideia de 
+organizá-los em funções veio posteriormente e com a quarentena iniciada em 2020 foi possível começar seu desenvolvimento. 
+Atuantes na área financeira  possuem o maior potencial de usufruir a totalidade dos benefícios deste recurso, contudo 
+qualquer usuário do pacote *MS Office* terá ganho ao usar o __VBF__ em:
 
 * Acessar banco de dados;
 * Manipular dados;
