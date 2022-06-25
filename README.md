@@ -38,25 +38,25 @@ tutorial será feito inicialmente em português (PT-BR) visando
 ajudar os falantes da língua em se desenvolverem como programador. O tutorial em inglês será disponibilizado/atualizado 
 logo em seguida
 
-## Tutorial
+# Tutorial
 
-### api_windows
+## api_windows
 
 ----
 
-#### api_download_web_file
+### api_download_web_file
 
-###### Descrição:
+### Descrição:
 
-    Baixa arquivos disponíveis em sites.
+Baixa arquivos disponíveis em sites.
 
-###### Sintaxe
+### Sintaxe
 
 ~~~vbnet
 vbf.api_download_web_file(*url_file, file, path*)
 ~~~
 
-###### Parâmetros
+### Parâmetros
 
 **Nome** | **Opcional** | **Tipo** | **Descrição**
 :-----:|:-----:|:-----:|:-----
@@ -64,11 +64,11 @@ url_file|obrigatório|String|A *URL* completo do arquivo na internet
 file|obrigatório|String|O nome que se deseja usar para salvar o arquivo no computador
 path|opcional|String|O caminho no computador onde deseja salvar o arquivo. Caso não seja informado será salvo na mesma pasta onde o arquivo *Excel* está salvo.
 
-###### retorno
+### retorno
 
 **Variant**
 
-###### Exemplo de uso
+### Exemplo de uso
 
 ~~~vbnet
 'Declara as variáveis
@@ -93,27 +93,27 @@ dwld = vbf.api_download_web_file(site_ind, arq, pt_temp)
 
 ----
 
-#### api_user_windows
+## api_user_windows
 
-###### Descrição:
+### Descrição:
 
-    Retorna o usuário atual.
+Retorna o usuário atual.
 
-###### Sintaxe
+### Sintaxe
 
 ~~~vbnet
 vbf.api_user_windows()
 ~~~
 
-###### Parâmetros
+### Parâmetros
 
     Não aplicado
 
-###### retorno
+### retorno
 
 **String**
 
-###### Exemplo de uso
+### Exemplo de uso
 
 ~~~vbnet
 'Declara as variáveis
@@ -130,20 +130,20 @@ user_id = vbf.api_user_windows()
 
 ----
 
-#### sql_connection_access
+### sql_connection_access
 
-###### Descrição:
+### Descrição:
 
-    Cria uma conexão *ODBC* com um arquivo *Access*.
+Cria uma conexão *ODBC* com um arquivo *Access*.
 
-###### Sintaxe
+### Sintaxe
 
 ~~~vbnet
 vbf.sql_connection_access(path_file, verbose, password)
 
 ~~~
 
-###### Parâmetros
+### Parâmetros
 
 **Nome** | **Opcional** | **Tipo** | **Descrição**
 :-----:|:-----:|:-----:|:-----
@@ -151,11 +151,11 @@ path_file|obrigatório|String|Caminho e nome do arquivo que deseja fazer a conex
 verbose|opcional|Boolean|Se for verdadeiro, retorna uma menssagem de erro em caso de falha
 password|opcional|String|Usado para informar a senha do arquivo caso haja.
 
-###### retorno
+### retorno
 
 **Variant**
 
-###### Exemplo de uso
+### Exemplo de uso
 
 ~~~vbnet
 Sub test_sql_connection_access()
@@ -170,31 +170,31 @@ End Sub
 
 ----
 
-#### sql_connection_excel
+## sql_connection_excel
 
-###### Descrição:
+### Descrição:
 
-    Cria uma conexão *ODBC* com um arquivo *Excel*.
+Cria uma conexão *ODBC* com um arquivo *Excel*.
 
-###### Sintaxe
+### Sintaxe
 
 ~~~vbnet
 vbf.sql_connection_excel(path_file, verbose)
 
 ~~~
 
-###### Parâmetros
+### Parâmetros
 
 **Nome** | **Opcional** | **Tipo** | **Descrição**
 :-----:|:-----:|:-----:|:-----
 path_file|obrigatório|String|Caminho e nome do arquivo que deseja fazer a conexão 
 verbose|opcional|Boolean|Se for verdadeiro, retorna uma menssagem de erro em caso de falha
 
-###### retorno
+### retorno
 
 **Variant**
 
-###### Exemplo de uso
+### Exemplo de uso
 
 ~~~vbnet
 Sub test_sql_connection_excel()
@@ -214,31 +214,31 @@ End Subb
 ----
 ############################################################################################################
 
-#### sql_connection_excel
+## sql_connection_excel
 
-###### Descrição:
+### Descrição:
 
-    Cria uma conexão *ODBC* com um arquivo *Excel*.
+Cria uma conexão *ODBC* com um arquivo *Excel*.
 
-###### Sintaxe
+### Sintaxe
 
 ~~~vbnet
 vbf.sql_connection_excel(path_file, verbose)
 
 ~~~
 
-###### Parâmetros
+### Parâmetros
 
 **Nome** | **Opcional** | **Tipo** | **Descrição**
 :-----:|:-----:|:-----:|:-----
 path_file|obrigatório|String|Caminho e nome do arquivo que deseja fazer a conexão 
 verbose|opcional|Boolean|Se for verdadeiro, retorna uma menssagem de erro em caso de falha
 
-###### retorno
+### retorno
 
 **Variant**
 
-###### Exemplo de uso
+### Exemplo de uso
 
 ~~~vbnet
 Sub test_sql_connection_excel()
@@ -252,7 +252,7 @@ Set cnn1 = vbf.sql_connection_excel(ThisWorkbook.FullName, True)
 'Conecta a um arquivo excel salvo em outa pasta
 Set cnn2 = vbf.sql_connection_excel(ThisWorkbook.path & "\use_example\SQL_Excel.xlsm", True)
 
-End Subb
+End Sub
 ~~~
 
 ----
