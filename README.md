@@ -153,7 +153,7 @@ password|opcional|String|Usado para informar a senha do arquivo caso haja.
 
 ### Retorno
 
-*ODBC.Connection*, padrão Variant*
+*ODBC.Connection*, padrão *Variant*
 
 ### Exemplo de uso
 
@@ -192,7 +192,7 @@ verbose|opcional|Boolean|Se for verdadeiro, retorna uma menssagem de erro em cas
 
 ### Retorno
 
-*ODBC.Connection*, padrão Variant*
+*ODBC.Connection*, padrão *Variant*
 
 ### Exemplo de uso
 
@@ -217,7 +217,7 @@ End Subb
 
 Cria uma conexão *ODBC* com um arquivos de texto (*.csv, .txt, etc*).
 
-**Obs:** Esta função só funciona no *Excel* de 32Bits. 
+**Obs:** Esta função só funciona no *Excel* de *32 Bits*. 
 
 ### Sintaxe
 
@@ -236,13 +236,13 @@ verbose|opcional|Boolean|Se for verdadeiro, retorna uma menssagem de erro em cas
 Percebe-se que a conexão é feita a uma pasta e não a um arquivo. Desta forma todos os arquivos em formato de texto contidos na pasta estarão disponíveis para consulta, 
 O nome do arquivo de interesse deve ser descriminado na consulta como se fosse o nome de uma tabela em um banco de dados.
 
-Talves o resultado da consulta realizada não seja satisfatório por conta do formato do arquivo testo em questão. Isto ocorre porque a formatação do texto possa estar diferente 
+Talves o resultado da consulta realizada não seja satisfatório por conta do formato do arquivo texto em questão. Isto ocorre porque a formatação do texto possa estar diferente 
 ao esperado pelo *Driver* *ODBC*. Corrija isto criando um arquivo [schema.ini](https://docs.microsoft.com/pt-br/sql/odbc/microsoft/schema-ini-file-text-file-driver?view=sql-server-ver16) e salvando no mesmo local onde o arquivo exto se encontra salvo. Com ele será 
 possivel trocar o separador de *vírgula* para *ponto e vírgula* por exemplo.
 
 ### Retorno
 
-*ODBC.Connection*, padrão Variant*
+*ODBC.Connection*, padrão *Variant*
 
 ### Exemplo de uso
 
@@ -279,15 +279,15 @@ sp_list|obrigatório|String|GUID da lista no *sharepoint*
 verbose|opcional|Boolean|Se for verdadeiro, retorna uma menssagem de erro em caso de falha
 password|opcional|String|Usado para informar a senha do arquivo caso haja.
 
-    Como visto acima é preciso de dois parametros incomuns. O site do *sharepoint* está disponível no navegador mas é preciso saber até onde se deve utilizar. 
-Como no esemplo abaixo copie o endereço do site até o nome que estiver após "site/". Caso não funcione esperimente até ".com" inclusive.
+Como visto acima é preciso de dois parametros incomuns. O site do *sharepoint* está disponível no navegador mas é preciso saber até onde se deve utilizar. 
+Como no exemplo abaixo copie o endereço do site até o nome que estiver após "site/". Caso não funcione esperimente até ".com" inclusive.
 Para pegar o GUID da lista é recomendado baixar a lista do *sharepoint* no formato *Excel# usando o botão que aparece na parte superior do *sharepoint* quando a lista 
 estiver aberta. Após baixar a lista, abra usando o *Excel*, clique em *dados>conexões*. Na janela que abrir, selecione a conexão na lista a esquerda e depois clique em *propriedades*. Na nova janela que abrir clique na aba *destino*. No campo *texto de comando* terá uma instrução em *XML*. Copie a chave que estiver entre as *tags* 
 `<LISTNAME>{copie o texto daqui}</LISTNAME>`
 
 ### Retorno
 
-*ODBC.Connection*, padrão Variant*
+*ODBC.Connection*, padrão *Variant*
 
 ### Exemplo de uso
 
@@ -314,9 +314,7 @@ End Sub
 
 ### Descrição:
 
-Cria uma conexão *ODBC* com um arquivo *Excel*.
-
-**Obs:** Esta função só funciona no *Excel* de 32Bits. 
+Realiza uma consulta a um banco de dados. Com esta função é possível usar instruções como *SELECT, UPDATE, INSERT INTO, CREATE, DELETE*.
 
 ### Sintaxe
 
@@ -329,7 +327,7 @@ vbf.sql_query(connection, Query, verbose)
 
 **Nome** | **Opcional** | **Tipo** | **Descrição**
 :-----:|:-----:|:-----:|:-----
-connection|obrigatório|ODBC.Connection|Informar a conexão com o banco a fonte de dados 
+connection|obrigatório|ODBC.Connection|Informar a conexão com a fonte de dados 
 Query|obrigatório|String|Qualquer instrução *SQL* que deseja realizar no banco
 verbose|opcional|Boolean|Se for verdadeiro, retorna uma menssagem de erro em caso de falha
 
