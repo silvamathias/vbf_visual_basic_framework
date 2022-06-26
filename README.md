@@ -31,18 +31,17 @@ sql|sql connection|Funções para usar a linguagem sql em arquivos (csv, xls,etc
 vld|data validate|Funções para validar os valores das variáveis
 xls|excel file and objects settings|Funções para manipular arquivos Excel e seus objetos
 
-O código utiliza do inglês em seu desenvolvimento, no entanto todas as funções que possuem uma mensagem de texto como  
-retorno, esta é feita por padrão em português (PT-BR) porém
-nestas existe a possibilidade de configurar o retorno em inglês (EN). Variáveis não possuem tradução, contudo este 
-tutorial será feito inicialmente em português (PT-BR) visando
-ajudar os falantes da língua em se desenvolverem como programador. O tutorial em inglês será disponibilizado/atualizado 
-logo em seguida
+O código utiliza do inglês em seu desenvolvimento, no entanto todas as mensagem de texto que são retorno de funções estão por padrão em português (PT-BR) porém
+nestas funções existe a possibilidade de configurar o retorno em inglês (EN). Variáveis não possuem tradução, contudo este tutorial será feito inicialmente em 
+português (PT-BR) visando ajudar os falantes da língua em se desenvolverem como programador. O tutorial em inglês será disponibilizado/atualizado logo em seguida.
 
 # Tutorial
 
 ## api_windows
 
 ----
+
+Funções que usam as API's do *Windows* para fazer diferentes tarefas.
 
 ### api_download_web_file
 
@@ -64,9 +63,9 @@ url_file|obrigatório|String|A *URL* completo do arquivo na internet
 file|obrigatório|String|O nome que se deseja usar para salvar o arquivo no computador
 path|opcional|String|O caminho no computador onde deseja salvar o arquivo. Caso não seja informado será salvo na mesma pasta onde o arquivo *Excel* está salvo.
 
-### retorno
+### Retorno
 
-**Variant**
+*texto csv*, padão *Variant*
 
 ### Exemplo de uso
 
@@ -109,9 +108,9 @@ vbf.api_user_windows()
 
     Não aplicado
 
-### retorno
+### Retorno
 
-**String**
+*String*, padão *Variant*
 
 ### Exemplo de uso
 
@@ -124,11 +123,12 @@ user_id = vbf.api_user_windows()
 
 ~~~
 
-----
-
 ### sql connection
 
 ----
+
+Conecte a banco de dados e outros tipos de arquivos como *excel, Access, .txt, .csv* e listas no *Sharepoint* usando o *ODBC*. Através deste recurso será possivel usar 
+as principais comondos como *SELECT, UPDATE, INSERT INTO, CREATE, DELETE* entre outros.
 
 ### sql_connection_access
 
@@ -151,9 +151,9 @@ path_file|obrigatório|String|Caminho e nome do arquivo que deseja fazer a conex
 verbose|opcional|Boolean|Se for verdadeiro, retorna uma menssagem de erro em caso de falha
 password|opcional|String|Usado para informar a senha do arquivo caso haja.
 
-### retorno
+### Retorno
 
-**Variant**
+*ODBC.Connection*, padrão Variant*
 
 ### Exemplo de uso
 
@@ -190,9 +190,9 @@ vbf.sql_connection_excel(path_file, verbose)
 path_file|obrigatório|String|Caminho e nome do arquivo que deseja fazer a conexão 
 verbose|opcional|Boolean|Se for verdadeiro, retorna uma menssagem de erro em caso de falha
 
-### retorno
+### Retorno
 
-**Variant**
+*ODBC.Connection*, padrão Variant*
 
 ### Exemplo de uso
 
@@ -211,19 +211,18 @@ Set cnn2 = vbf.sql_connection_excel(ThisWorkbook.path & "\use_example\SQL_Excel.
 End Subb
 ~~~
 
-----
-############################################################################################################
-
-## sql_connection_excel
+## sql_connection_txt
 
 ### Descrição:
 
-Cria uma conexão *ODBC* com um arquivo *Excel*.
+Cria uma conexão *ODBC* com um arquivos de texto (*.csv, .txt, etc*).
+
+**Obs:** Esta função só funciona no *Excel* de 32Bits. 
 
 ### Sintaxe
 
 ~~~vbnet
-vbf.sql_connection_excel(path_file, verbose)
+vbf.sql_connection_txt(path, verbose)
 
 ~~~
 
@@ -231,35 +230,137 @@ vbf.sql_connection_excel(path_file, verbose)
 
 **Nome** | **Opcional** | **Tipo** | **Descrição**
 :-----:|:-----:|:-----:|:-----
-path_file|obrigatório|String|Caminho e nome do arquivo que deseja fazer a conexão 
+path|obrigatório|String|Caminho onde os arquivo que deseja conectar estão salvos 
 verbose|opcional|Boolean|Se for verdadeiro, retorna uma menssagem de erro em caso de falha
 
-### retorno
+Percebe-se que a conexão é feita a uma pasta e não a um arquivo. Desta forma todos os arquivos em formato de texto contidos na pasta estarão disponíveis para consulta, 
+O nome do arquivo de interesse deve ser descriminado na consulta como se fosse o nome de uma tabela em um banco de dados.
 
-**Variant**
+Talves o resultado da consulta realizada não seja satisfatório por conta do formato do arquivo testo em questão. Isto ocorre porque a formatação do texto possa estar diferente 
+ao esperado pelo *Driver* *ODBC*. Corrija isto criando um arquivo [schema.ini](https://docs.microsoft.com/pt-br/sql/odbc/microsoft/schema-ini-file-text-file-driver?view=sql-server-ver16) e salvando no mesmo local onde o arquivo exto se encontra salvo. Com ele será 
+possivel trocar o separador de *vírgula* para *ponto e vírgula* por exemplo.
+
+### Retorno
+
+*ODBC.Connection*, padrão Variant*
 
 ### Exemplo de uso
 
 ~~~vbnet
-Sub test_sql_connection_excel()
+Sub test_sql_connection_txt()
 'Declara as variáveis
-Dim cnn1 As ADODB.connection
-Dim cnn2 As ADODB.connection
+Dim cnn As ADODB.connection
 
 'Conecta ao próprio arquivo excel
-Set cnn1 = vbf.sql_connection_excel(ThisWorkbook.FullName, True)
-
-'Conecta a um arquivo excel salvo em outa pasta
-Set cnn2 = vbf.sql_connection_excel(ThisWorkbook.path & "\use_example\SQL_Excel.xlsm", True)
+Set cnn = vbf.sql_connection_excel(ThisWorkbook.path, True)
 
 End Sub
 ~~~
 
-----
+## sql_connection_sharepoint
+
+### Descrição:
+
+Cria uma conexão *ODBC* com pastas do *sharepoint*.
+
+### Sintaxe
+
+~~~vbnet
+vbf.sql_connection_sharepoint(sp_site, sp_list, verbose, password)
+
+~~~
+
+### Parâmetros
+
+**Nome** | **Opcional** | **Tipo** | **Descrição**
+:-----:|:-----:|:-----:|:-----
+sp_site|obrigatório|String|Site do *sharepoint* 
+sp_list|obrigatório|String|GUID da lista no *sharepoint*
+verbose|opcional|Boolean|Se for verdadeiro, retorna uma menssagem de erro em caso de falha
+password|opcional|String|Usado para informar a senha do arquivo caso haja.
+
+    Como visto acima é preciso de dois parametros incomuns. O site do *sharepoint* está disponível no navegador mas é preciso saber até onde se deve utilizar. 
+Como no esemplo abaixo copie o endereço do site até o nome que estiver após "site/". Caso não funcione esperimente até ".com" inclusive.
+Para pegar o GUID da lista é recomendado baixar a lista do *sharepoint* no formato *Excel# usando o botão que aparece na parte superior do *sharepoint* quando a lista 
+estiver aberta. Após baixar a lista, abra usando o *Excel*, clique em *dados>conexões*. Na janela que abrir, selecione a conexão na lista a esquerda e depois clique em *propriedades*. Na nova janela que abrir clique na aba *destino*. No campo *texto de comando* terá uma instrução em *XML*. Copie a chave que estiver entre as *tags* 
+`<LISTNAME>{copie o texto daqui}</LISTNAME>`
+
+### Retorno
+
+*ODBC.Connection*, padrão Variant*
+
+### Exemplo de uso
+
+~~~vbnet
+Sub test_sql_connection_sharepoint()
+'Declara as variáveis
+Dim cnn As ADODB.connection
+Dim sharepoint_site As String
+Dim sharepoint_listname As String
+
+'atibuir a uma variável o site do sharepoint até o nome após "site/"
+sharepoint_site = "https://suaempresa.sharepoint.com/sites/nome_da_lista"
+
+'atribuir a uma variável o GUID da lista de interesse no sharepoint
+sharepoint_listname = "2B057C59-68AA-43ED-97CC-D96852989222"
+'
+Set cnn = vbf.sql_connection_sharepoint(sharepoint_site, sharepoint_listname, True)
+
+End Sub
+~~~
+
+
+## sql_query
+
+### Descrição:
+
+Cria uma conexão *ODBC* com um arquivo *Excel*.
+
+**Obs:** Esta função só funciona no *Excel* de 32Bits. 
+
+### Sintaxe
+
+~~~vbnet
+vbf.sql_query(connection, Query, verbose)
+
+~~~
+
+### Parâmetros
+
+**Nome** | **Opcional** | **Tipo** | **Descrição**
+:-----:|:-----:|:-----:|:-----
+connection|obrigatório|ODBC.Connection|Informar a conexão com o banco a fonte de dados 
+Query|obrigatório|String|Qualquer instrução *SQL* que deseja realizar no banco
+verbose|opcional|Boolean|Se for verdadeiro, retorna uma menssagem de erro em caso de falha
+
+### Retorno
+
+*ODBC.recordset*, padrão *Variant*
+
+### Exemplo de uso
+
+~~~vbnet
+Sub test_sql_connection_query()
+'Declara as variáveis
+Dim cnn As ADODB.connection
+Dim rc As ADODB.recordset
+
+'Conecta ao banco access, salvo na mesma pasta do arquivo Excel, de nome "banco.accdb"
+Set cnn = vbf.sql_connection_access(ThisWorkbook.path & "\banco2.accdb", True)
+
+'Realiza uma consulta ao access ("select * from bk1")
+Set rc = vbf.sql_query(cnn, "select * from bk1", True)
+
+End Sub
+~~~
+
+**Obs:** Caso esta consulta do exemplo de uso estivesse sendo feita a uma tabela no *Excel* de nome *"bk1"*, seria preciso incluir *"$"* ao final do nome e entre colchetes.
+conforme exemplificado abaixo.
+
+~~~sql
+select * from [bk1$]
+~~~
+
+#########################################################################
 
 Em desenvolvimento...
-txt
-
-sharepoint
-
-consulta
