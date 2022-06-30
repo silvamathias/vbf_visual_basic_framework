@@ -1,5 +1,24 @@
 # vbf Visual Basic Framework
 
+## Sumário:
+
+1- Apresentação
+    1.1- [Descrição](#descrição)
+2- Tutorial das Funções
+    2.1- Funções [api_windows](#api_windows)
+    2.2- [Excel app settings](#Excel app settings)
+    2.3- [directory and files settings](#directory and files settings)
+    2.4- [work with datagroup](#work with datagroup)
+    2.5- [e-mail settings](#e-mail settings)
+    2.6- [usinng in sheet](#usinng in sheet)
+    2.7- [user interface](#user interface)
+    2.8- [sql connection](#sql connection)
+    2.9- [data validate](#data validate)
+    2.10- [excel file and objects settings](#excel file and objects settings)
+
+
+
+<a id="descrição"></a>
 ## Descrição
 
 O _Framework_ **VBF** é um grupo de funções criado para auxiliar no desenvolvimento de ferramentas em *VBA*.
@@ -36,6 +55,8 @@ nestas funções existe a possibilidade de configurar o retorno em inglês (EN).
 português (PT-BR) visando ajudar os falantes da língua em se desenvolverem como programador. O tutorial em inglês será disponibilizado/atualizado logo em seguida.
 
 # Tutorial
+
+<a id="api_windows"></a>
 
 ## api_windows
 
@@ -309,6 +330,7 @@ Set cnn = vbf.sql_connection_sharepoint(sharepoint_site, sharepoint_listname, Tr
 End Sub
 ~~~
 
+<a id="sql connection"></a>
 
 ## sql_query
 
@@ -360,5 +382,18 @@ select * from [bk1$]
 ~~~
 
 #########################################################################
+
+
+
+<a id="Excel app settings"></a>
+<a id="directory and files settings"></a>
+<a id="work with datagroup"></a>
+<a id="e-mail settings"></a>
+<a id="usinng in sheet"></a>
+<a id="user interface"></a>
+
+<a id="data validate"></a>
+<a id="excel file and objects settings"></a>
+
 
 Em desenvolvimento...
