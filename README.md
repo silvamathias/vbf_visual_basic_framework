@@ -12,7 +12,7 @@
         * [app_set_reference](#app_set_reference)
         * [app_app_config_on](#app_app_config_on)
         * [app_app_config_off](#app_app_config_off)
-    3. [Directory and files settings (def)](#directory_and_files_settings)
+    3. Funções [Directory and files settings (def)](#directory_and_files_settings)
         * [def_copy_folder](#def_copy_folder)
         * [def_copy_file](#def_copy_file)
         * [def_find_file](#def_find_file)
@@ -24,7 +24,7 @@
         * [def_delete_file](#def_delete_file)
         * [def_open_system_folder](#def_open_system_folder)
         * [def_list_folder_item](#def_list_folder_item)
-    4. [Work with datagroup (dtg)](#work_with_datagroup)
+    4. Funções [Work with datagroup (dtg)](#work_with_datagroup)
         * [dtg_sheet_to_array](#dtg_sheet_to_array)
         * [dtg_array_to_txt](#dtg_array_to_txt)
         * [dtg_list_to_txt](#dtg_list_to_txt)
@@ -35,27 +35,27 @@
         * [dtg_array_transpose](#dtg_array_transpose)
         * [dtg_array_to_html](#dtg_array_to_html)
         * [dtg_recordset_to_array](#dtg_recordset_to_array)
-    5. [E-mail settings (eml)](#e-mail_settings)
+    5. Funções [E-mail settings (eml)](#e-mail_settings)
         * [eml_email_config](#eml_email_config)
-    6. [Usinng in sheet (fun)](#usinng_in_sheet)
+    6. Funções [Usinng in sheet (fun)](#usinng_in_sheet)
         * [fun_symbol_off](#fun_symbol_off)
         * [fun_split_off](#fun_split_off)
         * [fun_concat_split_off](#fun_concat_split_off)
-    7. [User interface (msg)](#user_interface)
+    7. Funções [User interface (msg)](#user_interface)
         * [msg_msg_config](#msg_msg_config)
-    8. [SQL connection (sql)](#sql_connection)
+    8. Funções [SQL connection (sql)](#sql_connection)
         * [sql_connection_access](#sql_connection_access)
         * [sql_connection_excel](#sql_connection_excel)
         * [sql_connection_txt](#sql_connection_txt)
         * [sql_connection_sharepoint](#sql_connection_sharepoint)
         * [sql_query](#sql_query)
-    9. [Data validate (vld)](#data_validate)
+    9. Funções [Data validate (vld)](#data_validate)
         * [vld_validate_date](#vld_validate_date)
         * [vld_validate_integer](#vld_validate_integer)
         * [vld_validate_double](#vld_validate_double)
         * [vld_validate_string](#vld_validate_string)
         * [vld_validate_not_blanc](#vld_validate_not_blanc)
-    10. [Excel file and objects settings (xls)](#excel_file_and_objects_settings)
+    10. Funções [Excel file and objects settings (xls)](#excel_file_and_objects_settings)
         * [xls_delete_sheets](#xls_delete_sheets)
         * [xls_refresh_query](#xls_refresh_query)
         * [xls_create_sheet](#xls_create_sheet)
@@ -585,7 +585,7 @@ select * from [bk1$]
 
 <a id="data_validate"></a>
 
-## Data Validat
+## Data Validate
 
 <a id="vld_validate_date"></a>
 
