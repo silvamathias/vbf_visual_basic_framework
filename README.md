@@ -2,20 +2,19 @@
 
 ## Sumário:
 
-1- Apresentação
-    1.1- [Descrição](#descrição)
-2- Tutorial das Funções
-    2.1- Funções [api_windows](#api_windows)
-    2.2- [Excel app settings](#Excel app settings)
-    2.3- [directory and files settings](#directory and files settings)
-    2.4- [work with datagroup](#work with datagroup)
-    2.5- [e-mail settings](#e-mail settings)
-    2.6- [usinng in sheet](#usinng in sheet)
-    2.7- [user interface](#user interface)
-    2.8- [sql connection](#sql connection)
-    2.9- [data validate](#data validate)
-    2.10- [excel file and objects settings](#excel file and objects settings)
-
+1. Apresentação
+    11. [Descrição](#descrição)
+2. Tutorial das Funções
+    21. Funções [API Windows](#api_windows)
+    22. Funções [Excel app settings](#Excel_app_settings)
+    23. Funções [Directory and files settings](#directory_and_files_settings)
+    24. Funções [Work with datagroup](#work_with_datagroup)
+    25. Funções [E-mail settings](#e-mail_settings)
+    26. Funções [Usinng in sheet](#usinng_in_sheet)
+    27. Funções [User interface](#user_interface)
+    28. Funções [SQL Connection](#sql_connection)
+    29. Funções [Data validate](#data_validate)
+    210. Funções [excel file and objects settings](#excel_file_and_objects_settings)
 
 
 <a id="descrição"></a>
@@ -58,9 +57,7 @@ português (PT-BR) visando ajudar os falantes da língua em se desenvolverem com
 
 <a id="api_windows"></a>
 
-## api_windows
-
-----
+## API Windows
 
 Funções que usam as API's do *Windows* para fazer diferentes tarefas.
 
@@ -111,8 +108,6 @@ dwld = vbf.api_download_web_file(site_ind, arq, pt_temp)
 
 ~~~
 
-----
-
 ## api_user_windows
 
 ### Descrição:
@@ -144,9 +139,16 @@ user_id = vbf.api_user_windows()
 
 ~~~
 
-### sql connection
+<a id="Excel_app_settings"></a>
+<a id="directory_and_files_settings"></a>
+<a id="work_with_datagroup"></a>
+<a id="e-mail_settings"></a>
+<a id="usinng_in_sheet"></a>
+<a id="user_interface"></a>
 
-----
+<a id="sql_connection"></a>
+
+### sql connection
 
 Conecte a banco de dados e outros tipos de arquivos como *excel, Access, .txt, .csv* e listas no *Sharepoint* usando o *ODBC*. Através deste recurso será possivel usar 
 as principais comondos como *SELECT, UPDATE, INSERT INTO, CREATE, DELETE* entre outros.
@@ -188,8 +190,6 @@ Set cnn = vbf.sql_connection_access(ThisWorkbook.path & "\banco.accdb", True, "1
 
 End Sub
 ~~~
-
-----
 
 ## sql_connection_excel
 
@@ -330,8 +330,6 @@ Set cnn = vbf.sql_connection_sharepoint(sharepoint_site, sharepoint_listname, Tr
 End Sub
 ~~~
 
-<a id="sql connection"></a>
-
 ## sql_query
 
 ### Descrição:
@@ -383,17 +381,7 @@ select * from [bk1$]
 
 #########################################################################
 
-
-
-<a id="Excel app settings"></a>
-<a id="directory and files settings"></a>
-<a id="work with datagroup"></a>
-<a id="e-mail settings"></a>
-<a id="usinng in sheet"></a>
-<a id="user interface"></a>
-
-<a id="data validate"></a>
-<a id="excel file and objects settings"></a>
-
+<a id="data_validate"></a>
+<a id="excel_file_and_objects_settings"></a>
 
 Em desenvolvimento...
