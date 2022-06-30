@@ -3,18 +3,18 @@
 ## Sumário:
 
 1. Apresentação
-    11. [Descrição](#descrição)
+    1. [Descrição](#descrição)
 2. Tutorial das Funções
-    21. Funções [API Windows](#api_windows)
-    22. Funções [Excel app settings](#Excel_app_settings)
-    23. Funções [Directory and files settings](#directory_and_files_settings)
-    24. Funções [Work with datagroup](#work_with_datagroup)
-    25. Funções [E-mail settings](#e-mail_settings)
-    26. Funções [Usinng in sheet](#usinng_in_sheet)
-    27. Funções [User interface](#user_interface)
-    28. Funções [SQL Connection](#sql_connection)
-    29. Funções [Data validate](#data_validate)
-    210. Funções [excel file and objects settings](#excel_file_and_objects_settings)
+    1. Funções [API Windows](#api_windows)
+    2. Funções [Excel app settings](#Excel_app_settings)
+    3. Funções [Directory and files settings](#directory_and_files_settings)
+    4. Funções [Work with datagroup](#work_with_datagroup)
+    5. Funções [E-mail settings](#e-mail_settings)
+    6. Funções [Usinng in sheet](#usinng_in_sheet)
+    7. Funções [User interface](#user_interface)
+    8. Funções [SQL Connection](#sql_connection)
+    9. Funções [Data validate](#data_validate)
+    10. Funções [excel file and objects settings](#excel_file_and_objects_settings)
 
 
 <a id="descrição"></a>
