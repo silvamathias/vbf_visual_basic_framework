@@ -123,7 +123,7 @@ português (PT-BR) visando ajudar os falantes da língua em se desenvolverem com
 
 <a id="api_windows"></a>
 
-## API Windows
+# API Windows
 
 Funções que usam as API's do *Windows* para fazer diferentes tarefas.
 
@@ -178,7 +178,7 @@ dwld = vbf.api_download_web_file(site_ind, arq, pt_temp)
 
 <a id="api_user_windows"></a>
 
-## api_user_windows
+# api_user_windows
 
 ### Descrição:
 
@@ -211,7 +211,7 @@ user_id = vbf.api_user_windows()
 
 <a id="Excel_app_settings"></a>
 
-## Excel app settings
+# Excel app settings
 
 Funções que manipulam o *programa Excel*
 
@@ -295,7 +295,7 @@ End Sub
 
 <a id="app_config_on"></a>
 
-### app_config_on
+# app_config_on
 
 ### Descrição:
 
@@ -331,138 +331,138 @@ End Sub
 
 <a id="directory_and_files_settings"></a>
 
-## Directory and Files Settings
+# Directory and Files Settings
 
 <a id="def_copy_folder"></a>
 
-### def_copy_folder
+# def_copy_folder
 
 <a id="def_copy_file"></a>
 
-### def_copy_file
+# def_copy_file
 
 <a id="def_find_file"></a>
 
-### def_find_file
+# def_find_file
 
 <a id="def_find_folder"></a>
 
-### def_find_folder
+# def_find_folder
 
 <a id="def_folder_exist"></a>
 
-### def_folder_exist
+# def_folder_exist
 
 <a id="def_file_exist"></a>
 
-### def_file_exist
+# def_file_exist
 
 <a id="def_create_folder"></a>
 
-### def_create_folder
+# def_create_folder
 
 <a id="def_delete_folder"></a>
 
-### def_delete_folder
+# def_delete_folder
 
 <a id="def_delete_file"></a>
 
-### def_delete_file
+# def_delete_file
 
 <a id="def_open_system_folder"></a>
 
-### def_open_system_folder
+# def_open_system_folder
 
 <a id="def_list_folder_item"></a>
 
-### def_list_folder_item
+# def_list_folder_item
 
 <a id="work_with_datagroup"></a>
 
-## Work With Datagroup
+# Work With Datagroup
 
 <a id="dtg_sheet_to_array"></a>
 
-### dtg_sheet_to_array
+# dtg_sheet_to_array
 
 <a id="dtg_array_to_txt"></a>
 
-### dtg_array_to_txt
+# dtg_array_to_txt
 
 <a id="dtg_list_to_txt"></a>
 
-### dtg_list_to_txt
+# dtg_list_to_txt
 
 <a id="dtg_read_intire_txt"></a>
 
-### dtg_read_intire_txt
+# dtg_read_intire_txt
 
 <a id="dtg_read_array_txt"></a>
 
-### dtg_read_array_txt
+# dtg_read_array_txt
 
 <a id="dtg_array_to_sheet"></a>
 
-### dtg_array_to_sheet
+# dtg_array_to_sheet
 
 <a id="dtg_recordset_to_sheet"></a>
 
-### dtg_recordset_to_sheet
+# dtg_recordset_to_sheet
 
 <a id="dtg_array_transpose"></a>
 
-### dtg_array_transpose
+# dtg_array_transpose
 
 <a id="dtg_array_to_html"></a>
 
-### dtg_array_to_htm
+# dtg_array_to_htm
 
 <a id="dtg_recordset_to_array"></a>
 
-### dtg_recordset_to_array
+# dtg_recordset_to_array
 
 <a id="e-mail_settings"></a>
 
-## E-mail Settings
+# E-mail Settings
 
 <a id="eml_email_config"></a>
 
-### eml_email_config
+# eml_email_config
 
 <a id="usinng_in_sheet"></a>
 
-## Usinng in Sheet
+# Usinng in Sheet
 
 <a id="fun_symbol_off"></a>
 
-### fun_symbol_off
+# fun_symbol_off
 
 <a id="fun_split_off"></a>
 
-### fun_split_off
+# fun_split_off
 
 <a id="fun_concat_split_off"></a>
 
-### fun_concat_split_off
+# fun_concat_split_off
 
 <a id="user_interface"></a>
 
-## User Interface 
+# User Interface 
 
 <a id="msg_msg_config"></a>
 
-### msg_msg_config
+# msg_msg_config
 
 <a id="sql_connection"></a>
 
-## SQL Connection
+# SQL Connection
 
 Conecte a banco de dados e outros tipos de arquivos como *excel, Access, .txt, .csv* e listas no *Sharepoint* usando o *ODBC*. Através deste recurso será possivel usar 
 as principais comondos como *SELECT, UPDATE, INSERT INTO, CREATE, DELETE* entre outros.
 
 <a id="sql_connection_access"></a>
 
-### sql_connection_access
+# sql_connection_access
 
 ### Descrição:
 
@@ -502,7 +502,7 @@ End Sub
 
 <a id="sql_connection_excel"></a>
 
-## sql_connection_excel
+# sql_connection_excel
 
 ### Descrição:
 
@@ -545,7 +545,7 @@ End Subb
 
 <a id="sql_connection_txt"></a>
 
-## sql_connection_txt
+# sql_connection_txt
 
 ### Descrição:
 
@@ -593,7 +593,7 @@ End Sub
 
 <a id="sql_connection_sharepoint"></a>
 
-## sql_connection_sharepoint
+# sql_connection_sharepoint
 
 ### Descrição:
 
@@ -647,7 +647,7 @@ End Sub
 
 <a id="sql_query"></a>
 
-## sql_query
+# sql_query
 
 ### Descrição:
 
@@ -698,111 +698,108 @@ select * from [bk1$]
 
 <a id="data_validate"></a>
 
-## Data Validate
+# Data Validate
 
 <a id="vld_validate_date"></a>
 
-### vld_validate_date
+# vld_validate_date
 
 <a id="vld_validate_integer"></a>
 
-### vld_validate_integer
+# vld_validate_integer
 
 <a id="vld_validate_double"></a>
 
-### vld_validate_double
+# vld_validate_double
 
 <a id="vld_validate_string"></a>
 
-### vld_validate_string
+# vld_validate_string
 
 <a id="vld_validate_not_blanc"></a>
 
-### vld_validate_not_blanc
+# vld_validate_not_blanc
 
 <a id="vld_validate_date"></a>
 
-### vld_validate_date
+# vld_validate_date
 
 <a id="vld_validate_integer"></a>
 
-### vld_validate_integer
+# vld_validate_integer
 
 <a id="vld_validate_double"></a>
 
-### vld_validate_double
+# vld_validate_double
 
 <a id="vld_validate_string"></a>
 
-### vld_validate_string
+# vld_validate_string
 
 <a id="vld_validate_not_blanc"></a>
 
-### vld_validate_not_blanc
+# vld_validate_not_blanc
 
 <a id="excel_file_and_objects_settings"></a>
 
-## excel file and objects settings
+# excel file and objects settings
 
 <a id="xls_delete_sheets"></a>
 
-### xls_delete_sheets
+# xls_delete_sheets
 
 <a id="xls_refresh_query"></a>
 
-### xls_refresh_query
+# xls_refresh_query
 
 <a id="xls_create_sheet"></a>
 
-### xls_create_sheet
+# xls_create_sheet
 
 <a id="xls_copy_sheet"></a>
 
-### xls_copy_sheet
+# xls_copy_sheet
 
 <a id="xls_hide_sheet"></a>
 
-### xls_hide_sheet
+# xls_hide_sheet
 
 <a id="xls_veryhide_sheet"></a>
 
-### xls_veryhide_sheet
+# xls_veryhide_sheet
 
 <a id="xls_show_sheet"></a>
 
-### xls_show_sheet
+# xls_show_sheet
 
 <a id="xls_save_as_excel"></a>
 
-### xls_save_as_excel
+# xls_save_as_excel
 
 <a id="xls_save_excel"></a>
 
-### xls_save_excel
+# xls_save_excel
 
 <a id="xls_close_excel"></a>
 
-### xls_close_excel
+# xls_close_excel
 
 <a id="xls_open_excel"></a>
 
-### xls_open_excel
+# xls_open_excel
 
 <a id="xls_protect_sheet"></a>
 
-### xls_protect_sheet
+# xls_protect_sheet
 
 <a id="xls_unprotect_sheet"></a>
 
-### xls_unprotect_sheet
+# xls_unprotect_sheet
 
 <a id="xls_lock_file"></a>
 
-### xls_lock_file
+# xls_lock_file
 
 <a id="xls_unlock_file"></a>
 
-### xls_unlock_file
-
-
-Em desenvolvimento...
+# xls_unlock_file
