@@ -1,3 +1,4 @@
+Attribute VB_Name = "vbf"
 'Copyright (c) 2022 silvamathias
 '
 'Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -20,7 +21,6 @@
 '---------------------------------------------------------------------------------------------------
 'Project repository >> https://github.com/silvamathias/vbf_visual_basic_framework#api_windows
 '---------------------------------------------------------------------------------------------------
-Attribute VB_Name = "vbf"
 Option Explicit
 '----32bits download web API------------------------------------------------------------------------
 'Private Declare Function api_download_from_web Lib "urlmon" Alias "URLDownloadToFileA" _
@@ -87,13 +87,15 @@ On Error GoTo error
 
 Set wb = ThisWorkbook
 
-ref(1) = "{420B2830-E718-11CF-893D-00A0C9054228}"
-ref(2) = "{00062FFF-0000-0000-C000-000000000046}"
-ref(3) = "{B691E011-1797-432E-907A-4D8C69339129}"
+ref(1) = "{420B2830-E718-11CF-893D-00A0C9054228}"   'Microsoft Scripting Runtime
+ref(2) = "{00062FFF-0000-0000-C000-000000000046}"   'Microsoft Outlook 16.0 Object Library
+ref(3) = "{B691E011-1797-432E-907A-4D8C69339129}"   'Microsoft ActiveX Data Objects 6.1 Library
 
 
 For Each item In ref
+    On Error Resume Next
     wb.VBProject.References.AddFromGuid GUID:=item, Major:=1, Minor:=0
+    If Err.Number <> 0 Then Err.Clear
 Next item
 app_set_reference = True & ";app_set_reference"
 Exit Function
@@ -102,27 +104,43 @@ app_set_reference = "ERRO;" & "app_set_reference;" & Err.Number & ";" & Err.Desc
 End Function
 
 
-Function app_app_config_on()
+Function app_config_on() As Boolean
+app_config_on = False
 Dim app As Application
+
+On Error GoTo erro
+
 Set app = Application
+
 With app
     .Calculation = xlCalculationAutomatic
     .EnableEvents = True
     .DisplayAlerts = True
     .ScreenUpdating = True
 End With
+app_config_on = True
+Exit Function
+erro:
 End Function
 
 
-Function app_app_config_off()
+Function app_config_off() As Boolean
+app_config_off = False
 Dim app As Application
+
+On Error GoTo erro
+
 Set app = Application
+
 With app
     .Calculation = xlCalculationManual
     .EnableEvents = False
     .DisplayAlerts = False
     .ScreenUpdating = False
 End With
+app_config_off = True
+Exit Function
+erro:
 End Function
 
 
@@ -801,32 +819,32 @@ Function dtg_recordset_to_array(ByVal recordset As Variant) As Variant
 dtg_recordset_to_array = False
 
 Dim array_ob() As Variant
-Dim RC As ADODB.recordset
+Dim rc As ADODB.recordset
 Dim row() As Variant
 Dim i As Long
 Dim j As Long
 Dim num_col As Long
 On Error GoTo error
 
-Set RC = recordset
+Set rc = recordset
 
-num_col = RC.Fields.Count - 1
+num_col = rc.Fields.Count - 1
 ReDim row(0 To num_col)
-RC.MoveFirst
+rc.MoveFirst
 
 i = 0
-Do Until RC.EOF <> False
+Do Until rc.EOF <> False
     For j = 0 To num_col
         If i = 0 Then
-            row(j) = RC.Fields(j).name
+            row(j) = rc.Fields(j).name
         Else
-            row(j) = RC.Fields(j).Value
+            row(j) = rc.Fields(j).Value
         End If
     Next j
     ReDim Preserve array_ob(0 To i)
     array_ob(i) = row
     i = i + 1
-    RC.MoveNext
+    rc.MoveNext
 Loop
 dtg_recordset_to_array = array_ob
 Exit Function
@@ -1185,13 +1203,13 @@ End Function
 Function sql_query(ByVal connection As Variant, ByVal Query As String, Optional ByVal verbose As Boolean) As Variant
 sql_query = False
 
-Dim RC As ADODB.recordset
+Dim rc As ADODB.recordset
 On Error GoTo error
 
-Set RC = connection.Execute(Query)
+Set rc = connection.Execute(Query)
 
 If UCase(Left(Query, 6)) = "SELECT" Then
-    Set sql_query = RC
+    Set sql_query = rc
 Else
     Set sql_query = Nothing
 End If
