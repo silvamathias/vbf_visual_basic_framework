@@ -11,8 +11,8 @@
         * [api_user_windows](#api_user_windows)
     2. Funções [Excel app settings (app)](#Excel_app_settings)
         * [app_set_reference](#app_set_reference)
-        * [app_config_on](#app_config_on)
         * [app_config_off](#app_config_off)
+        * [app_config_on](#app_config_on)
     3. Funções [Directory and files settings (def)](#directory_and_files_settings)
         * [def_copy_folder](#def_copy_folder)
         * [def_copy_file](#def_copy_file)
@@ -97,7 +97,7 @@ se utiliza. Atualmente conta com 10 grupos de funções e 56 funções.
 **prefixo** | **tipo** | **Descrição**
 :-----:|:-----:|:-----
 api|api_windows|Funções que usam as API's do windows
-app|Excel app settings|Funções que manipulam o programa Excel.
+app|Excel app settings|Funções que manipulam o *programa Excel*.
 def|directory and files settings|Funções usadas para manipular arquivos e diretórios do computador
 dtg|work with datagroup|Funções que manipulam dados estruturados disponíveis em diversos formatos (txt, xls, recordset, etc)
 eml|e-mail settings|Funções para manipular odjetos Outlook
@@ -209,9 +209,50 @@ user_id = vbf.api_user_windows()
 
 ~~~
 
+<a id="Excel_app_settings"></a>
+
+## Excel app settings
+
+Funções que manipulam o *programa Excel*
+
+<a id="app_set_reference"></a>
+
+# app_set_reference
+
+### Descrição:
+
+Inclui as bibliotecas necessárias para o uso de todas as funões na lista de referências.
+
+### Sintaxe
+
+~~~vbnet
+vbf.app_set_reference()
+~~~
+
+### Parâmetros
+
+Não aplicado
+
+### Retorno
+
+*texto csv*, padão *Variant*
+
+### Exemplo de uso
+
+~~~vbnet
+'Declara as variáveis
+Sub test_app_set_reference()
+Dim set_ref As String
+
+'Neste caso a variável para receber o retorno da função é opcional
+set_ref = vbf.app_set_reference
+
+End Sub
+~~~
+
 <a id="app_config_off"></a>
 
-### app_config_off
+# app_config_off
 
 ### Descrição:
 
@@ -251,41 +292,6 @@ app_off = vbf.app_config_off
 
 End Sub
 ~~~ 
-
-<a id="Excel_app_settings"></a>
-
-## Excel app settings
-
-### Descrição:
-
-Inclui as bibliotecas necessárias para o uso de todas as funões na lista de referências.
-
-### Sintaxe
-
-~~~vbnet
-vbf.app_set_reference()
-~~~
-
-### Parâmetros
-
-Não aplicado
-
-### Retorno
-
-*texto csv*, padão *Variant*
-
-### Exemplo de uso
-
-~~~vbnet
-'Declara as variáveis
-Sub test_app_set_reference()
-Dim set_ref As String
-
-'Neste caso a variável para receber o retorno da função é opcional
-set_ref = vbf.app_set_reference
-
-End Sub
-~~~
 
 <a id="app_config_on"></a>
 
