@@ -4,14 +4,15 @@
 
 1. Apresentação
     1. [Descrição](#descrição)
+    1. [Requisitos](#requisitos)
 2. Tutorial das Funções
     1. Funções [api_windows (api)](#api_windows)
         * [api_download_web_file](#api_download_web_file)
         * [api_user_windows](#api_user_windows)
     2. Funções [Excel app settings (app)](#Excel_app_settings)
         * [app_set_reference](#app_set_reference)
-        * [app_app_config_on](#app_app_config_on)
-        * [app_app_config_off](#app_app_config_off)
+        * [app_config_on](#app_config_on)
+        * [app_config_off](#app_config_off)
     3. Funções [Directory and files settings (def)](#directory_and_files_settings)
         * [def_copy_folder](#def_copy_folder)
         * [def_copy_file](#def_copy_file)
@@ -90,8 +91,8 @@ qualquer usuário do pacote *MS Office* terá ganho ao usar o __VBF__ em:
 * Baixar dados disponível na web;
 * Elabor relatórios automáticos.
 
-    As funções estão separadas em grupos para facilitar o uso. Contam com um prefixo para facilitar a identificação enquanto se utiliza.
-Atualmente conta com 10 grupos de funções e 56 funções.
+As funções estão separadas em grupos para facilitar o uso. Contam com um prefixo para facilitar a identificação enquanto 
+se utiliza. Atualmente conta com 10 grupos de funções e 56 funções.
 
 **prefixo** | **tipo** | **Descrição**
 :-----:|:-----:|:-----
@@ -109,6 +110,14 @@ xls|excel file and objects settings|Funções para manipular arquivos Excel e se
 O código utiliza do inglês em seu desenvolvimento, no entanto todas as mensagem de texto que são retorno de funções estão por padrão em português (PT-BR) porém
 nestas funções existe a possibilidade de configurar o retorno em inglês (EN). Variáveis não possuem tradução, contudo este tutorial será feito inicialmente em 
 português (PT-BR) visando ajudar os falantes da língua em se desenvolverem como programador. O tutorial em inglês será disponibilizado/atualizado logo em seguida.
+
+<a id="requisitos"></a>
+
+## Requisitos 
+
+É preciso habilitar três bibliotecas nas referências do *VBA*.
+
+
 
 # Tutorial
 
@@ -129,7 +138,7 @@ Baixa arquivos disponíveis em sites.
 ### Sintaxe
 
 ~~~vbnet
-vbf.api_download_web_file(*url_file, file, path*)
+vbf.api_download_web_file(url_file, file, path)
 ~~~
 
 ### Parâmetros
@@ -183,7 +192,7 @@ vbf.api_user_windows()
 
 ### Parâmetros
 
-    Não aplicado
+Não aplicado
 
 ### Retorno
 
@@ -200,21 +209,119 @@ user_id = vbf.api_user_windows()
 
 ~~~
 
+<a id="app_config_off"></a>
+
+### app_config_off
+
+### Descrição:
+
+Desabilita configurações do Excel para deixar as macros de automatização mais rápida e sem pausas. Esta função desabilita 
+os seguintes parametros:
+
+* Calculation: Torna o cálculo das céluas manual;
+* EnableEvents: Desabilita os eventos;
+* DisplayAlerts: Desabilita alertas de atividades coo deletar planilhas ou fechar *Excel* sem gravar;
+* ScreenUpdating: Desabilita atualização, não mostrando o que é feito pela macro.
+
+**OBS:** Estas alterações ficam salvas no *programa Excel* afetando outros arquivos *Excel*, mesmo depois de desligar o computador
+
+### Sintaxe
+
+~~~vbnet
+vbf.app_config_off()
+~~~
+
+### Parâmetros
+
+Não aplicado
+
+### Retorno
+
+*Boolean*
+
+### Exemplo de uso
+
+~~~vbnet
+Sub test_app_config_off()
+'Declara as variáveis
+Dim app_off As Boolean
+
+'Neste caso a variável para receber o retorno da função é opcional
+app_off = vbf.app_config_off
+
+End Sub
+~~~ 
+
 <a id="Excel_app_settings"></a>
 
 ## Excel app settings
 
-<a id="app_set_reference"></a>
+### Descrição:
 
-### app_set_reference
+Inclui as bibliotecas necessárias para o uso de todas as funões na lista de referências.
 
-<a id="app_app_config_on"></a>
+### Sintaxe
 
-### app_app_config_on
+~~~vbnet
+vbf.app_set_reference()
+~~~
 
-<a id="app_app_config_off"></a>
+### Parâmetros
 
-### app_app_config_off
+Não aplicado
+
+### Retorno
+
+*texto csv*, padão *Variant*
+
+### Exemplo de uso
+
+~~~vbnet
+'Declara as variáveis
+Sub test_app_set_reference()
+Dim set_ref As String
+
+'Neste caso a variável para receber o retorno da função é opcional
+set_ref = vbf.app_set_reference
+
+End Sub
+~~~
+
+<a id="app_config_on"></a>
+
+### app_config_on
+
+### Descrição:
+
+Retorna a configuração padrão do Excel podendo deixá-lo lento ao rodar macros de automatizações de tarefas. Faz o inverso 
+da função [app_config_off](#app_config_off).
+
+### Sintaxe
+
+~~~vbnet
+vbf.app_config_on()
+~~~
+
+### Parâmetros
+
+Não aplicado
+
+### Retorno
+
+*Boolean*
+
+### Exemplo de uso
+
+~~~vbnet
+Sub test_app_config_on()
+'Declara as variáveis
+Dim app_on As Boolean
+
+'Neste caso a variável para receber o retorno da função é opcional
+app_on = vbf.app_config_on
+
+End Sub
+~~~ 
 
 <a id="directory_and_files_settings"></a>
 
