@@ -166,7 +166,7 @@ def_copy_folder = "ERRO;" & "def_copy_folder;" & Err.Number & ";" & Err.Descript
 End Function
 
 
-Function def_copy_file(ByVal path_file As String, ByVal new_path_file As String, Optional ByVal overwrite As Variant) As Variant
+Function def_copy_file(ByVal path_file As String, ByVal new_path_file As String, Optional ByVal overwrite As Boolean) As Variant
 def_copy_file = False
 
 Dim srt As FileSystemObject

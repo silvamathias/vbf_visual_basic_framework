@@ -333,53 +333,445 @@ End Sub
 
 # Directory and Files Settings
 
+Funções usadas para manipular arquivos e diretórios do computador.  Estas funções funcionam para qualquer tipo de arquivo, *.accdb, .xlsx, .txt, .jpeg, .pdf*, etc.
+
 <a id="def_copy_folder"></a>
 
 # def_copy_folder
+
+### Descrição:
+
+Copia uma pasta para outro diretório podendo trocar seu nome. 
+
+### Sintaxe
+
+~~~vbnet
+vbf.def_copy_folder( path, new_path, overwrite)
+~~~
+
+### Parâmetros
+
+**Nome** | **Opcional** | **Tipo** | **Descrição**
+:-----:|:-----:|:-----:|:-----
+path|obrigatório|String|Pasta que deseja copiar
+new_path|obrigatório|String|Diretório que deseja enviar a pasta
+overwrite|opcional|Boolean|Define se deseja sobrescrever caso a pasta já exista. O valor padrão é Falso
+
+### Retorno
+
+*texto csv*, padão *Variant*
+
+### Exemplo de uso
+
+~~~vbnet
+Sub test_def_copy_folder()
+'Declara as variáveis
+Dim cp_dir As Variant
+
+'Copia a pasta informada trocando seu nome
+cp_dir = vbf.def_copy_folder(ThisWorkbook.path & "\teste", ThisWorkbook.path & "\Cópia teste", True)
+
+End Sub
+~~~
 
 <a id="def_copy_file"></a>
 
 # def_copy_file
 
+### Descrição:
+
+Copia um arquivo para outro diretório podendo trocar seu nome.
+
+### Sintaxe
+
+~~~vbnet
+vbf.def_copy_file(path_file, new_path_file, overwrite)
+~~~
+
+### Parâmetros
+
+**Nome** | **Opcional** | **Tipo** | **Descrição**
+:-----:|:-----:|:-----:|:-----
+path_file|obrigatório|String|Diretório e arquivo que deseja copiar
+new_path_file|obrigatório|String|Diretório e nome do arquivo de onde será salvo o arquivo
+overwrite|opcional|Boolean|Define se deseja sobrescrever caso a pasta já exista. O valor padrão é Falso
+
+### Retorno
+
+*texto csv*, padão *Variant*
+
+### Exemplo de uso
+
+~~~vbnet
+Sub test_def_copy_file()
+'Declara as variáveis
+Dim cp_arq As Variant
+
+'Copia o arquivo 'banco.accdb' para a pasta 'Cópia teste' trocando seu nome para 'novo_db.accdb'
+cp_arq = vbf.def_copy_file(ThisWorkbook.path & "\banco.accdb", ThisWorkbook.path & "\Cópia teste\novo_db.accdb", True)
+
+End Sub
+~~~
+
 <a id="def_find_file"></a>
 
 # def_find_file
+
+### Descrição:
+
+Exibe a caixa de diálogo padrão de abrir arquivos e retorna o nome do arquivo selecionado sem abri-lo.
+
+### Sintaxe
+
+~~~vbnet
+vbf.def_find_file(verbose, EN_lang)
+~~~
+
+### Parâmetros
+
+**Nome** | **Opcional** | **Tipo** | **Descrição**
+:-----:|:-----:|:-----:|:-----
+verbose|opcional|Boolean|Se for verdadeiro, retorna uma menssagem de erro em caso de falha
+EN_lang|opcional|Boolean|Se verdadeiro, a menságem de retorno será feita em *inglês - EN*
+
+### Retorno
+
+*texto csv*, padão *Variant*
+
+### Exemplo de uso
+
+~~~vbnet
+Sub test_def_find_file()
+'Declara as variáveis
+Dim file As Variant
+
+'Chama a função optando que retorne mensságem de texto e que seja em inglês'
+file = vbf.def_find_file(True, True)
+
+End Sub
+~~~
 
 <a id="def_find_folder"></a>
 
 # def_find_folder
 
+### Descrição:
+
+Exibe a caixa de diálogo padrão de selecionar pasta e retorna seu caminho sem abri-la.
+
+### Sintaxe
+
+~~~vbnet
+vbf.def_find_folder(verbose, EN_lang)
+~~~
+
+### Parâmetros
+
+**Nome** | **Opcional** | **Tipo** | **Descrição**
+:-----:|:-----:|:-----:|:-----
+verbose|opcional|Boolean|Se for verdadeiro, retorna uma menssagem de erro em caso de falha
+EN_lang|opcional|Boolean|Se verdadeiro, a menságem de retorno será feita em *inglês - EN*
+
+### Retorno
+
+*texto csv*, padão *Variant*
+
+### Exemplo de uso
+
+~~~vbnet
+Sub test_def_find_folder()
+'Declara as variáveis
+Dim folder As Variant
+
+'Chama a função optando que retorne mensságem de texto e que seja em inglês'
+folder = vbf.def_find_folder(True, True)
+
+End Sub
+~~~
+
 <a id="def_folder_exist"></a>
 
 # def_folder_exist
+
+### Descrição:
+
+Verificas se um diretório existe retornando verdadeiro ou falso.
+
+### Sintaxe
+
+~~~vbnet
+vbf.def_folder_exist(path)
+~~~
+
+### Parâmetros
+
+**Nome** | **Opcional** | **Tipo** | **Descrição**
+:-----:|:-----:|:-----:|:-----
+path|Obrigatório|String|Diretório que deseja verificar se existe
+
+### Retorno
+
+*Boolean*, padão *Variant*
+
+### Exemplo de uso
+
+~~~vbnet
+Sub test_def_folder_exist()
+'Declara as variáveis
+Dim folder As Boolean
+
+'Verifica se a pasta Windows existe no diretório 'c'
+folder = vbf.def_folder_exist("c:\Windows")
+
+End Sub
+~~~
 
 <a id="def_file_exist"></a>
 
 # def_file_exist
 
+### Descrição:
+
+Verificas se um arquivo existe retornando verdadeiro ou falso.
+
+### Sintaxe
+
+~~~vbnet
+vbf.def_file_exist(path)
+~~~
+
+### Parâmetros
+
+**Nome** | **Opcional** | **Tipo** | **Descrição**
+:-----:|:-----:|:-----:|:-----
+path|Obrigatório|String|Diretório que deseja verificar se existe
+
+### Retorno
+
+*Boolean*, padão *Variant*
+
+### Exemplo de uso
+
+~~~vbnet
+Sub test_def_file_exist()
+'Declara as variáveis
+Dim folder As Boolean
+
+'Verifica se o arquivo novo_db.accdb existe no diretório informado
+folder = vbf.def_file_exist(ThisWorkbook.path & "\Cópia teste\novo_db.accdb")
+
+End Sub
+~~~
+
 <a id="def_create_folder"></a>
 
 # def_create_folder
+
+### Descrição:
+
+Cria uma pasta no diretório informado.
+
+### Sintaxe
+
+~~~vbnet
+vbf.def_create_folder(path_name)
+~~~
+
+### Parâmetros
+
+**Nome** | **Opcional** | **Tipo** | **Descrição**
+:-----:|:-----:|:-----:|:-----
+path_name|Obrigatório|String|Diretório que deseja criar
+
+### Retorno
+
+*variant*, padão *Variant*
+
+### Exemplo de uso
+
+~~~vbnet
+Sub test_def_create_folder()
+'Declara as variáveis
+Dim folder As Variant
+
+'Cria uma pasta de nome 'teste' no mesmo diretório que o arquivo excel atual está salvo
+folder = vbf.def_create_folder(ThisWorkbook.path & "\teste")
+
+End Sub
+~~~
 
 <a id="def_delete_folder"></a>
 
 # def_delete_folder
 
+### Descrição:
+
+Deleta a pasta informada. 
+
+**OBS:** Desta forma a pasta não vai para a lixeira. Ela é excluida do computador completamente.
+
+### Sintaxe
+
+~~~vbnet
+vbf.def_delete_folder(path_name)
+~~~
+
+### Parâmetros
+
+**Nome** | **Opcional** | **Tipo** | **Descrição**
+:-----:|:-----:|:-----:|:-----
+path_name|Obrigatório|String|Diretório que deseja deletar
+
+### Retorno
+
+*variant*, padão *Variant*
+
+### Exemplo de uso
+
+~~~vbnet
+Sub test_def_delete_folder()
+'Declara as variáveis
+Dim folder As Variant
+
+'Deleta a pasta 'teste' localizada no mesmo diretório que o arquivo excel atual está salvo
+folder = vbf.def_delete_folder(ThisWorkbook.path & "\teste")
+
+End Sub
+~~~
+
 <a id="def_delete_file"></a>
 
 # def_delete_file
+
+### Descrição:
+
+Deleta o arquivo informada. 
+
+**OBS:** Desta forma o arquivo não vai para a lixeira. Ela é excluida do computador completamente.
+
+### Sintaxe
+
+~~~vbnet
+vbf.def_delete_folder(path_name)
+~~~
+
+### Parâmetros
+
+**Nome** | **Opcional** | **Tipo** | **Descrição**
+:-----:|:-----:|:-----:|:-----
+path_name|Obrigatório|String|Arquivo que deseja deletar
+
+### Retorno
+
+*variant*, padão *Variant*
+
+### Exemplo de uso
+
+~~~vbnet
+Sub test_def_delete_file()
+'Declara as variáveis
+Dim folder As Variant
+
+'Deleta o arquivo 'novo_db.accdb' localizado no diretório informado
+folder = vbf.def_delete_file(ThisWorkbook.path & "\Cópia teste\novo_db.accdb")
+
+End Sub
+~~~
 
 <a id="def_open_system_folder"></a>
 
 # def_open_system_folder
 
+### Descrição:
+
+Abre o *Windows Explorer* na pasta informada.
+
+### Sintaxe
+
+~~~vbnet
+vbf.def_open_system_folder(path)
+~~~
+
+### Parâmetros
+
+**Nome** | **Opcional** | **Tipo** | **Descrição**
+:-----:|:-----:|:-----:|:-----
+path|Opcional|String|Pasta que deseja abrir. Caso não seja informada uma pasta será aberta a pasta onde o arquivo *Excel* atual está salvo
+
+### Retorno
+
+*variant*, padão *Variant*
+
+### Exemplo de uso
+
+~~~vbnet
+Sub test_def_open_system_folder()
+'Declara as variáveis
+Dim folder As Variant
+
+'Abre o diretório informado
+folder = vbf.def_open_system_folder(ThisWorkbook.path & "\Cópia teste")
+
+End Sub
+~~~
+
 <a id="def_list_folder_item"></a>
 
 # def_list_folder_item
 
+### Descrição:
+
+Abre o *Windows Explorer* na pasta informada.
+
+### Sintaxe
+
+~~~vbnet
+vbf.def_list_folder_item(ByVal path As String, Optional ByVal exclude_folder As Boolean, Optional ByVal exclude_file As Boolean) 
+~~~
+
+### Parâmetros
+
+**Nome** | **Opcional** | **Tipo** | **Descrição**
+:-----:|:-----:|:-----:|:-----
+path|Obrigatório|String|Pasta que deseja listar seus itens
+exclude_folder|Opcional|Boolean|Ignora as pastas contidas no diretório informado se verdadeiro, listando apenas os arquivos. Falso é o valor padrão
+exclude_file|Opcional|Boolean|Ignora os arquivos contidos no diretório informado se verdadeiro, listando apenas as pastas. Falso é o valor padrão
+
+### Retorno
+
+*Array*, padão *Variant*
+
+Na tabela abaixo estão os nomes das colunas e sua descrições 
+
+Índice da coluna|Nome da coluna|Descrição
+:----:|:----:|:----
+0|item type|Informo se é uma pasta ou um arquivo
+1|path|Diretório e o nome do arquivo ou pasta
+2||name|Informa apenas o nome do arquivo ou pasta
+3|date_created|Data de criação
+4|date_last_accessed|Data do último acesso
+5|date_last_modified|Data da última modificação
+6|size|Tamanho em bytes
+7|type|Tipo do arquivo ou pasta
+
+### Exemplo de uso
+
+~~~vbnet
+Sub test_def_list_folder_item()
+'Declara as variáveis
+Dim folder As Variant
+
+'Lista todos os arquivos e pastas do diretório informado
+folder = vbf.def_list_folder_item(ThisWorkbook.path & "\Cópia teste")
+
+End Sub
+~~~
+
 <a id="work_with_datagroup"></a>
 
 # Work With Datagroup
+
+Funções que manipulam dados estruturados disponíveis em diversos formatos (txt, xls, recordset, etc)
 
 <a id="dtg_sheet_to_array"></a>
 
@@ -425,6 +817,8 @@ End Sub
 
 # E-mail Settings
 
+Funções para manipular odjetos Outlook
+
 <a id="eml_email_config"></a>
 
 # eml_email_config
@@ -432,6 +826,8 @@ End Sub
 <a id="usinng_in_sheet"></a>
 
 # Usinng in Sheet
+
+Funções que podem ser usadas em planilhas como uma função normal do Excel
 
 <a id="fun_symbol_off"></a>
 
@@ -448,6 +844,8 @@ End Sub
 <a id="user_interface"></a>
 
 # User Interface 
+
+Funções para facilitar a comunicação com o usuário final
 
 <a id="msg_msg_config"></a>
 
@@ -700,6 +1098,8 @@ select * from [bk1$]
 
 # Data Validate
 
+Funções para validar os valores das variáveis
+
 <a id="vld_validate_date"></a>
 
 # vld_validate_date
@@ -743,6 +1143,8 @@ select * from [bk1$]
 <a id="excel_file_and_objects_settings"></a>
 
 # excel file and objects settings
+
+Funções para manipular arquivos Excel e seus objetos
 
 <a id="xls_delete_sheets"></a>
 
