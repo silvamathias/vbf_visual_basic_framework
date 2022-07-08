@@ -20,6 +20,7 @@ Attribute VB_Name = "vbf"
 'SOFTWARE.
 '---------------------------------------------------------------------------------------------------
 'Project repository >> https://github.com/silvamathias/vbf_visual_basic_framework#api_windows
+'--version: 0.0.0
 '---------------------------------------------------------------------------------------------------
 Option Explicit
 '----32bits download web API------------------------------------------------------------------------
@@ -336,7 +337,7 @@ End Function
 Function def_list_folder_item(ByVal path As String, Optional ByVal exclude_folder As Boolean, Optional ByVal exclude_file As Boolean) As Variant
 def_list_folder_item = False
 Dim srt As FileSystemObject
-Dim fl As Scripting.Folder
+Dim fl As Scripting.folder
 Dim item_obj As Object
 Dim item As Variant
 Dim row_item(7) As Variant
@@ -449,7 +450,7 @@ Else
 End If
 
 If ws.Range(cell_ref).Value = "" And num_row = 1 And num_col = 1 Then
-    dtg_sheet_to_array = "ERRO;" & "transformar_em_array_ob;" & "Erro" & ";" & "A colula informada como referÃªncia estÃ¡ vazia e nÃ£o pertence a uma tabela."
+    dtg_sheet_to_array = "ERRO;" & "transformar_em_array_ob;" & "Erro" & ";" & "A colula informada como referência está vazia e não pertence a uma tabela."
     Exit Function
 End If
 x = 0
@@ -1047,7 +1048,7 @@ ElseIf list(0) = False Then
     If EN_lang = True Then
         MsgBox "Task possibly not achieved ", vbExclamation + vbOKOnly, "Executed without error. Task not completed"
     Else
-        MsgBox "Tarefa possivelmente nÃ£o alcanÃ§ado", vbExclamation + vbOKOnly, "Executado sem erro. Tarefa nÃ£o foi concluida"
+        MsgBox "Tarefa possivelmente não alcançado", vbExclamation + vbOKOnly, "Executado sem erro. Tarefa não foi concluida"
     End If
 ElseIf list(0) = True Then
     If EN_lang = True Then
@@ -1068,7 +1069,7 @@ If EN_lang = True Then
     "Integer values ??(1 for true or 0 for false);" & Chr(10) & _
     "Standardized text (See manual).", vbCritical + vbOKOnly, "Error in: msg_msg_config"
 Else
-    MsgBox "Informe apenas variÃ¡veis do tipo:" & Chr(10) & _
+    MsgBox "Informe apenas variáveis do tipo:" & Chr(10) & _
     "Bollean (Verdadeiro ou Faso);" & Chr(10) & _
     "Valores inteiros (1 para verdadeiro ou 0 para falso);" & Chr(10) & _
     "Texto padronizado (Consulte o manual).", vbCritical + vbOKOnly, "Erro em: msg_msg_config"
@@ -1243,7 +1244,7 @@ If verbose = True And Err.Number = 13 Then
     If EN_lang = True Then
         msg = MsgBox("Please enter a valid date in the field " & reference_text, vbExclamation + vbOKOnly, "Erro em: " & reference_text)
     Else
-        msg = MsgBox("Favor informar uma data vÃ¡lida no campo " & reference_text, vbExclamation + vbOKOnly, "Erro em: " & reference_text)
+        msg = MsgBox("Favor informar uma data válida no campo " & reference_text, vbExclamation + vbOKOnly, "Erro em: " & reference_text)
     End If
     vld_validate_date = False
     Exit Function
@@ -1277,7 +1278,7 @@ If verbose = True And Err.Number = 13 Then
     If EN_lang = True Then
         msg = MsgBox("Please enter a valid integer in the field " & reference_text, vbExclamation + vbOKOnly, "Erro em: " & reference_text)
     Else
-        msg = MsgBox("Favor informar um nÃºmero inteiro vÃ¡lido no campo " & reference_text, vbExclamation + vbOKOnly, "Erro em: " & reference_text)
+        msg = MsgBox("Favor informar um número inteiro válido no campo " & reference_text, vbExclamation + vbOKOnly, "Erro em: " & reference_text)
     End If
     vld_validate_integer = False
     Exit Function
@@ -1311,7 +1312,7 @@ If verbose = True And Err.Number = 13 Then
     If EN_lang = True Then
         msg = MsgBox("Please enter a valid number in the field " & reference_text, vbExclamation + vbOKOnly, "Erro em: " & reference_text)
     Else
-        msg = MsgBox("Favor informar um nÃºmero vÃ¡lido no campo " & reference_text, vbExclamation + vbOKOnly, "Erro em: " & reference_text)
+        msg = MsgBox("Favor informar um número válido no campo " & reference_text, vbExclamation + vbOKOnly, "Erro em: " & reference_text)
     End If
     vld_validate_double = False
     Exit Function
@@ -1345,7 +1346,7 @@ If verbose = True And Err.Number = 13 Then
     If EN_lang = True Then
         msg = MsgBox("Please enter valid text in the field " & reference_text, vbExclamation + vbOKOnly, "Erro em: " & reference_text)
     Else
-        msg = MsgBox("Favor informar texto vÃ¡lido no campo " & reference_text, vbExclamation + vbOKOnly, "Erro em: " & reference_text)
+        msg = MsgBox("Favor informar texto válido no campo " & reference_text, vbExclamation + vbOKOnly, "Erro em: " & reference_text)
     End If
     vld_validate_string = False
     Exit Function
@@ -1353,7 +1354,7 @@ ElseIf verbose = True And chg_type = "" Then
     If EN_lang = True Then
         msg = MsgBox("The " & reference_text & " field cannot be empty " & reference_text, vbExclamation + vbOKOnly, "Erro em: " & reference_text)
     Else
-        msg = MsgBox("O campo " & reference_text & " nÃ£o pode ficar vazio", vbExclamation + vbOKOnly, "Erro em: " & reference_text)
+        msg = MsgBox("O campo " & reference_text & " não pode ficar vazio", vbExclamation + vbOKOnly, "Erro em: " & reference_text)
     End If
     vld_validate_string = False
     Exit Function
@@ -1387,7 +1388,7 @@ If verbose = True And chg_type = "" Then
     If EN_lang = True Then
         msg = MsgBox("The " & reference_text & " field cannot be empty", vbExclamation + vbOKOnly, "Erro em: " & reference_text)
     Else
-        msg = MsgBox("O campo " & reference_text & " nÃ£o pode ficar vazio", vbExclamation + vbOKOnly, "Erro em: " & reference_text)
+        msg = MsgBox("O campo " & reference_text & " não pode ficar vazio", vbExclamation + vbOKOnly, "Erro em: " & reference_text)
     End If
     vld_validate_not_blanc = False
     Exit Function
@@ -1515,7 +1516,7 @@ End If
 
 If location = 1 Then         'a direita da sheet ativa
     wb.Sheets.Add(After:=wb.ActiveSheet).name = name_sheet
-ElseIf location = 2 Then     'no inï¿½cio
+ElseIf location = 2 Then     'no início
     wb.Sheets.Add(before:=wb.Sheets(1)).name = name_sheet
 ElseIf location = 3 Then     'no final
     wb.Sheets.Add(After:=wb.Sheets(wb.Sheets.Count)).name = name_sheet
@@ -1563,7 +1564,7 @@ Else
     If location = 1 Then         'a direita da sheet ativa
         st.Copy After:=st
         wb.ActiveSheet.name = name_sheet
-    ElseIf location = 2 Then     'no inï¿½cio
+    ElseIf location = 2 Then     'no início
         st.Copy before:=wb.Sheets(1)
         wb.ActiveSheet.name = name_sheet
     ElseIf location = 3 Then     'no final
@@ -1703,7 +1704,7 @@ If path = Empty Then
 End If
 
 If file = Empty Then
-    Set wb = ActiveWorkbook 'atenÃ§Ã£o ! atÃ© agora Ã© a Ãºnica funÃ§Ã£o fazendo referÃªncia ao file ativo e nÃ£o a este file
+    Set wb = ActiveWorkbook 'atenção ! até agora é a única função fazendo referência ao file ativo e não a este file
 Else
     Set wbs = Workbooks
     For Each arq In wbs
@@ -1776,7 +1777,7 @@ save_alteration = False
 On Error GoTo error
 
 If file = Empty Then
-    Set wb = ActiveWorkbook 'atenÃ§Ã£o ! atÃ© agora Ã© a Ãºnica funÃ§Ã£o fazendo referÃªncia ao file ativo e nÃ£o a este file
+    Set wb = ActiveWorkbook 'atenção ! até agora é a única função fazendo referência ao file ativo e não a este file
 Else
     Set wbs = Workbooks
     For Each arq In wbs
@@ -1830,7 +1831,7 @@ Dim arq As Variant
 On Error GoTo error
 
 If file = Empty Then
-    Set wb = ActiveWorkbook 'atenÃ§Ã£o ! atÃ© agora Ã© a Ãºnica funÃ§Ã£o fazendo referÃªncia ao file ativo e nÃ£o a este file
+    Set wb = ActiveWorkbook 'atenção ! até agora é a única função fazendo referência ao file ativo e não a este file
 Else
     Set wbs = Workbooks
     For Each arq In wbs
@@ -1869,7 +1870,7 @@ Dim arq As Variant
 On Error GoTo error
 
 If file = Empty Then
-    Set wb = ActiveWorkbook 'atenÃ§Ã£o ! atÃ© agora Ã© a Ãºnica funÃ§Ã£o fazendo referÃªncia ao file ativo e nÃ£o a este file
+    Set wb = ActiveWorkbook 'atenção ! até agora é a única função fazendo referência ao file ativo e não a este file
 Else
     Set wbs = Workbooks
     For Each arq In wbs
@@ -1906,7 +1907,7 @@ Dim arq As Variant
 On Error GoTo error
 
 If file = Empty Then
-    Set wb = ActiveWorkbook 'atenÃ§Ã£o ! atÃ© agora Ã© a Ãºnica funÃ§Ã£o fazendo referÃªncia ao file ativo e nÃ£o a este file
+    Set wb = ActiveWorkbook 'atenção ! até agora é a única função fazendo referência ao file ativo e não a este file
 Else
     Set wbs = Workbooks
     For Each arq In wbs
@@ -1937,7 +1938,7 @@ Dim arq As Variant
 On Error GoTo error
 
 If file = Empty Then
-    Set wb = ActiveWorkbook 'atenÃ§Ã£o ! atÃ© agora Ã© a Ãºnica funÃ§Ã£o fazendo referÃªncia ao file ativo e nÃ£o a este file
+    Set wb = ActiveWorkbook 'atenção ! até agora é a única função fazendo referência ao file ativo e não a este file
 Else
     Set wbs = Workbooks
     For Each arq In wbs
@@ -1956,3 +1957,5 @@ Exit Function
 error:
 xls_unlock_file = "ERRO;" & "xls_unlock_file;" & Err.Number & ";" & Err.Description
 End Function
+
+

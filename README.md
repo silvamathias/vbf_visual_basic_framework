@@ -823,6 +823,68 @@ Funções para manipular odjetos Outlook
 
 # eml_email_config
 
+### Descrição:
+
+Configura e-mail usando o *Outlook*.
+
+### Sintaxe
+
+~~~vbnet
+vbf.eml_email_config(send_to, send_subject, send_body, send_copy, send_add, send_hide, send_auto)
+~~~
+
+### Parâmetros
+
+**Nome** | **Opcional** | **Tipo** | **Descrição**
+:-----:|:-----:|:-----:|:-----
+send_to|obrigatório|String|Endereço de e-mail que receberão o e-mail. Use ';' para separar caso haja mais de 1 
+send_subject|obrigatório|String|O assunto do e-mail
+send_body|obrigatório|String|O conteúdo do e-mail. Pode ser usado HTML para formatar o texto
+send_copy|opcional|String|Endereço de e-mail que receberão o e-mail em cópia. Use ';' para separar caso haja mais de 1 
+send_add|opcional|String|Pasta e nome dos arquivos que serão enviados em anexo. Use ';' para separar caso haja mais de 1 
+send_hide|opcional|String|Endereço de e-mail que receberão o e-mail em cópia oculta. Use ';' para separar caso haja mais de 1 
+send_auto|opcional|Boolean|Se verdadeiro o e-mail será enviado automaticamente e se falso o e-mail será mostrado na tela
+### Retorno
+
+*texto csv*, padão *Variant*
+
+### Exemplo de uso
+
+~~~vbnet
+Sub text_eml_email_config()
+'Declara as variáveis
+Dim email As Variant
+Dim para As String
+Dim assunto As String
+Dim corpo As String
+Dim copia As String
+Dim anexo As String
+Dim autoenvio As Boolean
+
+'atribuindo valores às variáveis
+
+para = "emailpara@gmail.com"
+
+assunto = "email de teste"
+
+'o corpo do e-mail pode ser escrito usando HTML
+corpo = "<p>Olá, bom dia</p><p></p><p>Segue os arquivos em anexo.</p>"
+
+'Caso tenha mais de 1 e-mail, usar ";" para separá-los
+copia = "emailcopia@gmail.com;email_copia@hotmail.com"
+
+anexo = ThisWorkbook.path & "\db_example.txt"
+
+'Tambem use ";" para separar mais de um arquivo em anexo
+anexo = anexo & ";" & ThisWorkbook.path & "\banco.accdb"
+
+autoenvio = False
+
+'chama a função. Obcerve que não foi informado copia oculta então para declarar a variável seguinte foi usado "send_auto:=autoenvio"
+email = vbf.eml_email_config(para, assunto, corpo, copia, anexo, send_auto:=autoenvio)
+End Sub
+~~~
+
 <a id="usinng_in_sheet"></a>
 
 # Usinng in Sheet
